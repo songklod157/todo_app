@@ -14,7 +14,7 @@ class CustomListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TaskController taskController = Get.find();
-    return GestureDetector(
+    return InkWell(
       onTap: () => Get.to(() => TodoFormUpdateWidget(task: task)),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 5.0),

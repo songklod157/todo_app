@@ -79,55 +79,6 @@ class TodoPage extends StatelessWidget {
                         CustomListItem(
                           task: task,
                         ),
-                        // ListTile(
-                        //   title: Text(
-                        //       '${task.title}, ${DateFormat('yyyy-MM-dd').format(task.date)}'),
-                        //   subtitle: Row(
-                        //     children: [
-                        //       const Text(
-                        //         'Status:',
-                        //       ),
-                        //       Text(
-                        //         task.status == 'IN_PROGRESS'
-                        //             ? 'IN PROGRESS'
-                        //             : task.status,
-                        //         style: const TextStyle(
-                        //             fontWeight: FontWeight.w600, fontSize: 12),
-                        //       ),
-                        //     ],
-                        //   ),
-                        //   isThreeLine: true,
-                        //   leading: task.imageBase64.isNotEmpty
-                        //       ? Image.memory(
-                        //           base64Decode(task.imageBase64),
-                        //           width: 50,
-                        //           height: 50,
-                        //           fit: BoxFit.cover,
-                        //         )
-                        //       : null,
-                        //   trailing: Checkbox(
-                        //     value: task.status == 'COMPLETE',
-                        //     onChanged: (value) {
-                        //       // Update task status when checkbox is triggered
-                        //       taskController.updateTaskStatus(task.id, value);
-                        //     },
-                        //   ),
-                        //   onTap: () {
-                        //     // Update task with ID when tapping on a task (replace with your UI logic)
-                        //     taskController.updateTask(
-                        //       taskId: task.id,
-                        //       title: 'Updated Title',
-                        //       description: 'Updated Description',
-                        //       date: DateTime.now(),
-                        //       imageBytes: null,
-                        //       status: 'COMPLETE',
-                        //     );
-                        //   },
-                        //   onLongPress: () {
-                        //     // Delete task with ID when long-pressing on a task (replace with your UI logic)
-                        //     taskController.deleteTask(task.id);
-                        //   },
-                        // ),
                         const Divider(
                           height: 5,
                           thickness: 1,

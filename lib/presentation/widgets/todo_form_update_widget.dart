@@ -116,34 +116,48 @@ class TodoFormUpdateWidget extends StatelessWidget {
                             decoration:
                                 const InputDecoration(labelText: 'Status'),
                           ),
-                          const SizedBox(height: 5),
                           const SizedBox(height: 30),
-                          ElevatedButton(
-                            onPressed: () {
-                              if (!updateImage) {
-                                taskController.updateTask(
-                                  taskId: task.id,
-                                  title: taskController.taskInput.title,
-                                  description:
-                                      taskController.taskInput.description,
-                                  date: taskController.taskInput.date,
-                                  status: taskController.taskInput.status,
-                                );
-                              } else {
-                                taskController.updateTask(
-                                  taskId: task.id,
-                                  title: taskController.taskInput.title,
-                                  description:
-                                      taskController.taskInput.description,
-                                  date: taskController.taskInput.date,
-                                  imageBytes: taskController.selectedImage,
-                                  status: taskController.taskInput.status,
-                                );
-                              }
+                          SizedBox(
+                            width: 300,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ElevatedButton(
+                                    onPressed: () {
+                                      taskController.deleteTask(task.id);
+                                      Get.back();
+                                    },
+                                    child: const Text('Delete Task')),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    if (!updateImage) {
+                                      taskController.updateTask(
+                                        taskId: task.id,
+                                        title: taskController.taskInput.title,
+                                        description: taskController
+                                            .taskInput.description,
+                                        date: taskController.taskInput.date,
+                                        status: taskController.taskInput.status,
+                                      );
+                                    } else {
+                                      taskController.updateTask(
+                                        taskId: task.id,
+                                        title: taskController.taskInput.title,
+                                        description: taskController
+                                            .taskInput.description,
+                                        date: taskController.taskInput.date,
+                                        imageBytes:
+                                            taskController.selectedImage,
+                                        status: taskController.taskInput.status,
+                                      );
+                                    }
 
-                              Get.back();
-                            },
-                            child: const Text('Update Task'),
+                                    Get.back();
+                                  },
+                                  child: const Text('Update Task'),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
